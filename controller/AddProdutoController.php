@@ -15,6 +15,5 @@ if($pDao->adicionar($p)){
 	header('Location:../view/index.php');
  	die();
 }else{
-	echo "Erro";
-}
+	echo "Erro".mysqli_error($c->getConexao());}
 

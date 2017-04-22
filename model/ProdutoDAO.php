@@ -25,8 +25,8 @@ class ProdutoDAO{
 		$nome = $produto->getNome();
 		$valor = $produto->getValor();
 		$descricao = $produto->getDescricao();
-		$query  = "UPDATE produtos set nome='{$nome}',valor={$valor},descricao={descricao} WHERE id={$id}";
-		mysqli_query($this->db->getConexao(),$query);
+		$query  = "UPDATE produtos set nome='{$nome}',valor={$valor},descricao='{$descricao}' WHERE id={$id}";
+		return mysqli_query($this->db->getConexao(),$query);
 	} 
 
 	public function excluir(Produto $produto){

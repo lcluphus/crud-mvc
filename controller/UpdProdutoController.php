@@ -13,7 +13,8 @@ $p->setValor($_POST["preco"]);
 $p->setDescricao($_POST["descricao"]);
 
 if($pDao->atualizar($p)){
- header("Location:../view/index.php")
+ header("Location:../view/index.php");
+ die();
 }else{
-	echo "Erro";
+	echo "Erro".mysqli_error($c->getConexao());
 }
